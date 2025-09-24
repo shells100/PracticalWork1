@@ -24,8 +24,12 @@ if calculator == 1:
     print("Целочисленное деление (5)")
     print("Остаток от деления (6)")
     print("Возведение в степень (7)")
-
-    operation = int(input("Введите номер операции: "))
+    
+    try:
+        operation = int(input("Введите номер операции: "))
+    except ValueError:
+        print("Неизвестное значение")
+        exit()
 
     if operation == 1:
         print(num1 + num2)
@@ -71,15 +75,28 @@ elif calculator == 2:
     print("Логическое ИЛИ (2)")
     print("Логическое НЕ (3)")
 
-    operation = int(input("Введите номер операции: "))
+    try:
+        operation = int(input("Введите номер операции: "))
+    except ValueError:
+        print("Неизвестное значение")
+        exit()
 
     if operation == 3:
-        num = int(input("Введите число: "))
+        try:
+            num = int(input("Введите число: "))
+        except ValueError:
+            print("Неизвестное значение")
+            exit()
+
         print(not bool(num))
     
     elif operation == 1 or operation == 2:
-        num1 = int(input("Введите число 1: "))
-        num2 = int(input("Введите число 2: "))
+        try:
+            num1 = int(input("Введите число 1: "))
+            num2 = int(input("Введите число 2: "))
+        except ValueError:
+            print("Неизвестное значение")
+            exit()
 
         if operation == 1:
             print(bool(num1) and bool(num2))
@@ -102,16 +119,27 @@ elif calculator == 3:
     print("Побитовый сдвиг влево (5)")
     print("Побитовый сдвиг вправо (6)")
 
-    operation = int(input("Введите номер операции: "))
-
+    try:
+        operation = int(input("Введите номер операции: "))
+    except ValueError:
+        print("Неизвестное значение")
+    
     if operation == 4:
-        num = int(input("Введите число: "))
+        try:
+            num = int(input("Введите число: "))
+        except ValueError:
+            print("Неизвестное значение")
+
         print(~ num)
 
     elif operation != 4 and operation in [1, 2, 3, 4, 5, 6]:
-        num1 = int(input("Введите число 1: "))
-        num2 = int(input("Введите число 2: "))
-
+        try:
+            num1 = int(input("Введите число 1: "))
+            num2 = int(input("Введите число 2: "))
+        except ValueError:
+            print("Неизвестное значение")
+            exit()
+            
         if operation == 1:
             print(num1 & num2)
         
